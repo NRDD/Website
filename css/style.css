@@ -204,7 +204,7 @@ a:focus {
   }
 }
 
-
+/*noinspection CssNegativeValue*/
 @keyframes shadowSpin{
   0%{
     box-shadow: 10px -10px #39CCCC, -10px 10px #FFDC00;
@@ -234,9 +234,9 @@ a:focus {
   margin: -5px auto 0 auto;
   left: 0;
   right: 0;
-  border-radius: 0px;
+  border-radius: 0;
   border: 5px solid #FF4136;
-  box-shadow: 10px 0px #39CCCC, 10px 0px #01FF70;
+  box-shadow: 10px 0 #39CCCC, 10px 0 #01FF70;
   animation: shadowSpin 1s ease-in-out infinite;
 }
 
@@ -331,7 +331,6 @@ hr {
 
 .intro .slogan h2 {
 	color: #FFF;
-	text-shadow: none;
 	font-size: 60px;
 	line-height: 60px;
 	font-weight: 700;
@@ -339,8 +338,8 @@ hr {
 	background-color: rgba(0, 0, 0, 0);
 	text-decoration: none;
 	text-transform: uppercase;
-	border-width: 0px;
-	border-color: #000;
+	/*border-width: 0px;
+	border-color: #000;*/
 	border-style: none;
 	text-shadow: -1px 0 1px #000;
 }
@@ -640,13 +639,15 @@ Parallax
     -moz-animation-timing-function: linear;
 }
 
-@-webkit-keyframes pulse {    
-    0 {
+
+@-webkit-keyframes pulse
+{
+    0%{
         -webkit-transform: scale(1);
         transform: scale(1);
     }
 
-    50% {
+    50%{
         -webkit-transform: scale(1.2);
         transform: scale(1.2);
     }
@@ -657,8 +658,9 @@ Parallax
     }
 }
 
-@-moz-keyframes pulse {    
-    0 {
+/*noinspection ALL*/
+@-moz-keyframes pulse {
+    0% {
         -moz-transform: scale(1);
         transform: scale(1);
     }
