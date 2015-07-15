@@ -1,0 +1,1113 @@
+<!DOCTYPE html>
+<!-- saved from url=(0075)https://github.com/gulpjs/gulp/blob/master/docs/API.md#gulpsrcglobs-options -->
+<html lang="en" class=" is-copy-enabled"><head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# object: http://ogp.me/ns/object# article: http://ogp.me/ns/article# profile: http://ogp.me/ns/profile#"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Language" content="en">
+    <meta name="viewport" content="width=1020">
+    
+    
+    <title>gulp/API.md at master · gulpjs/gulp</title>
+    <link rel="search" type="application/opensearchdescription+xml" href="https://github.com/opensearch.xml" title="GitHub">
+    <link rel="fluid-icon" href="https://github.com/fluidicon.png" title="GitHub">
+    <link rel="apple-touch-icon" sizes="57x57" href="https://github.com/apple-touch-icon-114.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="https://github.com/apple-touch-icon-114.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="https://github.com/apple-touch-icon-144.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="https://github.com/apple-touch-icon-144.png">
+    <meta property="fb:app_id" content="1401488693436528">
+
+      <meta content="@github" name="twitter:site"><meta content="summary" name="twitter:card"><meta content="gulpjs/gulp" name="twitter:title"><meta content="gulp - The streaming build system" name="twitter:description"><meta content="https://avatars0.githubusercontent.com/u/6200624?v=3&amp;s=400" name="twitter:image:src">
+      <meta content="GitHub" property="og:site_name"><meta content="object" property="og:type"><meta content="https://avatars0.githubusercontent.com/u/6200624?v=3&amp;s=400" property="og:image"><meta content="gulpjs/gulp" property="og:title"><meta content="https://github.com/gulpjs/gulp" property="og:url"><meta content="gulp - The streaming build system" property="og:description">
+      <meta name="browser-stats-url" content="https://api.github.com/_private/browser/stats">
+    <meta name="browser-errors-url" content="https://api.github.com/_private/browser/errors">
+    <link rel="assets" href="https://assets-cdn.github.com/">
+    <link rel="web-socket" href="wss://live.github.com/_sockets/MTI3MDY0MTc6NTFmMDY1YzE1OWU5MmVkYmRiOTI1ZTFiZjczNjY0ZmE6ZGNhMzRhMWQ1NzkxYWNlMGNhOGVlOWRiZWI4ODQwNTVlMjQ0NzAyN2U4ZjUxYTA0ZGM1YjhmZjFhNjM3YWExMg==--b2bbb165c666660d2170f378364fd2e143958e55">
+    <meta name="pjax-timeout" content="1000">
+    <link rel="sudo-modal" href="https://github.com/sessions/sudo_modal">
+
+    <meta name="msapplication-TileImage" content="/windows-tile.png">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="selected-link" value="repo_source" data-pjax-transient="">
+
+        <meta name="google-analytics" content="UA-3769691-2">
+
+    <meta content="collector.githubapp.com" name="octolytics-host"><meta content="collector-cdn.github.com" name="octolytics-script-host"><meta content="github" name="octolytics-app-id"><meta content="D1F4046A:724A:9235840:55A6AF02" name="octolytics-dimension-request_id"><meta content="12706417" name="octolytics-actor-id"><meta content="djdapz" name="octolytics-actor-login"><meta content="7cb9e4421d8e53918fbc6c0c358c4bd6bc5a1868a55c986daa329facccc29704" name="octolytics-actor-hash">
+    
+    <meta content="Rails, view, blob#show" data-pjax-transient="true" name="analytics-event">
+    <meta class="js-ga-set" name="dimension1" content="Logged In">
+    <meta name="is-dotcom" content="true">
+      <meta name="hostname" content="github.com">
+    <meta name="user-login" content="djdapz">
+
+      <link rel="icon" sizes="any" mask="" href="https://assets-cdn.github.com/pinned-octocat.svg">
+      <meta name="theme-color" content="#4078c0">
+      <link rel="icon" type="image/x-icon" href="https://assets-cdn.github.com/favicon.ico">
+
+
+    <meta content="authenticity_token" name="csrf-param">
+<meta content="grSQeau83dg1gJVaoejSuUEs4snjfSAdowZJmeGstdF1l9nwJiPxMmMJl35jrGC/pDua6Dy7Xl9b3X0EpgMiRw==" name="csrf-token">
+
+    <link crossorigin="anonymous" href="https://assets-cdn.github.com/assets/github/index-8824a5ef57ac4ae0b5ca429778b9660b1c66d09deea2ff11681de18d86a4bbb1.css" media="all" rel="stylesheet">
+    <link crossorigin="anonymous" href="https://assets-cdn.github.com/assets/github2/index-f0d033a37796c27f6b5b24aa8dc21af9c206a51ed2fe782d660dc20267c17d2b.css" media="all" rel="stylesheet">
+    
+    
+
+
+    <meta http-equiv="x-pjax-version" content="3f58d2288e653bc3998db56bf3ad89c7">
+
+      
+  <meta name="description" content="gulp - The streaming build system">
+  <meta name="go-import" content="github.com/gulpjs/gulp git https://github.com/gulpjs/gulp.git">
+
+  <meta content="6200624" name="octolytics-dimension-user_id"><meta content="gulpjs" name="octolytics-dimension-user_login"><meta content="11167738" name="octolytics-dimension-repository_id"><meta content="gulpjs/gulp" name="octolytics-dimension-repository_nwo"><meta content="true" name="octolytics-dimension-repository_public"><meta content="false" name="octolytics-dimension-repository_is_fork"><meta content="11167738" name="octolytics-dimension-repository_network_root_id"><meta content="gulpjs/gulp" name="octolytics-dimension-repository_network_root_nwo">
+  <link href="https://github.com/gulpjs/gulp/commits/master.atom" rel="alternate" title="Recent Commits to gulp:master" type="application/atom+xml">
+
+  <style type="text/css"></style><script type="text/javascript" async="" src="./gulp docs_files/api.js"></script></head>
+
+
+  <body class="logged_in  env-production macintosh vis-public page-blob">
+    <a href="https://github.com/gulpjs/gulp/blob/master/docs/API.md#start-of-content" tabindex="1" class="accessibility-aid js-skip-to-content">Skip to content</a>
+    <div class="wrapper">
+      
+      
+      
+
+
+
+        <div class="header header-logged-in true" role="banner">
+  <div class="container clearfix">
+
+    <a class="header-logo-invertocat" href="https://github.com/" data-hotkey="g d" aria-label="Homepage" data-ga-click="Header, go to dashboard, icon:logo">
+  <span class="mega-octicon octicon-mark-github"></span>
+</a>
+
+
+      <div class="site-search repo-scope js-site-search" role="search">
+          <form accept-charset="UTF-8" action="https://github.com/gulpjs/gulp/search" class="js-site-search-form" data-global-search-url="/search" data-repo-search-url="/gulpjs/gulp/search" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"></div>
+  <label class="js-chromeless-input-container form-control">
+    <div class="scope-badge">This repository</div>
+    <input type="text" class="js-site-search-focus js-site-search-field is-clearable chromeless-input" data-hotkey="s" name="q" placeholder="Search" data-global-scope-placeholder="Search GitHub" data-repo-scope-placeholder="Search" tabindex="1" autocapitalize="off">
+  </label>
+</form>
+      </div>
+
+      <ul class="header-nav left" role="navigation">
+        <li class="header-nav-item">
+          <a href="https://github.com/pulls" class="js-selected-navigation-item header-nav-link" data-ga-click="Header, click, Nav menu - item:pulls context:user" data-hotkey="g p" data-selected-links="/pulls /pulls/assigned /pulls/mentioned /pulls">
+            Pull requests
+</a>        </li>
+        <li class="header-nav-item">
+          <a href="https://github.com/issues" class="js-selected-navigation-item header-nav-link" data-ga-click="Header, click, Nav menu - item:issues context:user" data-hotkey="g i" data-selected-links="/issues /issues/assigned /issues/mentioned /issues">
+            Issues
+</a>        </li>
+          <li class="header-nav-item">
+            <a class="header-nav-link" href="https://gist.github.com/" data-ga-click="Header, go to gist, text:gist">Gist</a>
+          </li>
+      </ul>
+
+    
+<ul class="header-nav user-nav right" id="user-links">
+  <li class="header-nav-item">
+      <span class="js-socket-channel js-updatable-content" data-channel="notification-changed:djdapz" data-url="/notifications/header">
+      <a href="https://github.com/notifications" aria-label="You have no unread notifications" class="header-nav-link notification-indicator tooltipped tooltipped-s" data-ga-click="Header, go to notifications, icon:read" data-hotkey="g n">
+          <span class="mail-status all-read"></span>
+          <span class="octicon octicon-inbox"></span>
+</a>  </span>
+
+  </li>
+
+  <li class="header-nav-item dropdown js-menu-container">
+    <a class="header-nav-link tooltipped tooltipped-s js-menu-target" href="https://github.com/new" aria-label="Create new..." data-ga-click="Header, create new, icon:add">
+      <span class="octicon octicon-plus left"></span>
+      <span class="dropdown-caret"></span>
+    </a>
+
+    <div class="dropdown-menu-content js-menu-content">
+      <ul class="dropdown-menu dropdown-menu-sw">
+        
+<a class="dropdown-item" href="https://github.com/new" data-ga-click="Header, create new repository">
+  New repository
+</a>
+
+
+  <a class="dropdown-item" href="https://github.com/organizations/new" data-ga-click="Header, create new organization">
+    New organization
+  </a>
+
+
+
+  <div class="dropdown-divider"></div>
+  <div class="dropdown-header">
+    <span title="gulpjs/gulp">This repository</span>
+  </div>
+    <a class="dropdown-item" href="https://github.com/gulpjs/gulp/issues/new" data-ga-click="Header, create new issue">
+      New issue
+    </a>
+
+      </ul>
+    </div>
+  </li>
+
+  <li class="header-nav-item dropdown js-menu-container">
+    <a class="header-nav-link name tooltipped tooltipped-s js-menu-target" href="https://github.com/djdapz" aria-label="View profile and more" data-ga-click="Header, show menu, icon:avatar">
+      <img alt="@djdapz" class="avatar" height="20" src="./gulp docs_files/12706417" width="20">
+      <span class="dropdown-caret"></span>
+    </a>
+
+    <div class="dropdown-menu-content js-menu-content">
+      <div class="dropdown-menu dropdown-menu-sw">
+        <div class="dropdown-header header-nav-current-user css-truncate">
+          Signed in as <strong class="css-truncate-target">djdapz</strong>
+        </div>
+        <div class="dropdown-divider"></div>
+
+        <a class="dropdown-item" href="https://github.com/djdapz" data-ga-click="Header, go to profile, text:your profile">
+          Your profile
+        </a>
+        <a class="dropdown-item" href="https://github.com/stars" data-ga-click="Header, go to starred repos, text:your stars">
+          Your stars
+        </a>
+        <a class="dropdown-item" href="https://github.com/explore" data-ga-click="Header, go to explore, text:explore">
+          Explore
+        </a>
+        <a class="dropdown-item" href="https://help.github.com/" data-ga-click="Header, go to help, text:help">
+          Help
+        </a>
+        <div class="dropdown-divider"></div>
+
+        <a class="dropdown-item" href="https://github.com/settings/profile" data-ga-click="Header, go to settings, icon:settings">
+          Settings
+        </a>
+
+        <form accept-charset="UTF-8" action="https://github.com/logout" class="logout-form" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"><input name="authenticity_token" type="hidden" value="/c/O65pO3UgOIh0UwHFIk4YHCb4Eu7zJU4hdbQNpf5zBbK8tLXFDRfANHdnndJzNknss19Lf7SxQpvaaWOtZNw=="></div>
+          <button class="dropdown-item dropdown-signout" data-ga-click="Header, sign out, icon:logout">
+            Sign out
+          </button>
+</form>      </div>
+    </div>
+  </li>
+</ul>
+
+
+    
+  </div>
+</div>
+
+        
+
+        
+
+
+      <div id="start-of-content" class="accessibility-aid"></div>
+          <div class="site" itemscope="" itemtype="http://schema.org/WebPage">
+    <div id="js-flash-container">
+      
+    </div>
+    <div class="pagehead repohead instapaper_ignore readability-menu">
+      <div class="container">
+
+        
+<ul class="pagehead-actions">
+
+  <li>
+      <form accept-charset="UTF-8" action="https://github.com/notifications/subscribe" class="js-social-container" data-autosubmit="true" data-remote="true" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"><input name="authenticity_token" type="hidden" value="DHc4HigpQ73SojWVIRppvBT2ZyX05KatSmXj6L2tpIyJsNhTd8ZNKA7opgMjfQpLbaghkpT5a6ri/llIu67pTg=="></div>    <input id="repository_id" name="repository_id" type="hidden" value="11167738">
+
+      <div class="select-menu js-menu-container js-select-menu">
+        <a href="https://github.com/gulpjs/gulp/subscription" class="btn btn-sm btn-with-count select-menu-button js-menu-target" role="button" tabindex="0" aria-haspopup="true" data-ga-click="Repository, click Watch settings, action:blob#show">
+          <span class="js-select-button">
+            <span class="octicon octicon-eye"></span>
+            Watch
+          </span>
+        </a>
+        <a class="social-count js-social-count" href="https://github.com/gulpjs/gulp/watchers">
+          741
+        </a>
+
+        <div class="select-menu-modal-holder">
+          <div class="select-menu-modal subscription-menu-modal js-menu-content" aria-hidden="true">
+            <div class="select-menu-header">
+              <span class="select-menu-title">Notifications</span>
+              <span class="octicon octicon-x js-menu-close" role="button" aria-label="Close"></span>
+            </div>
+
+            <div class="select-menu-list js-navigation-container" role="menu">
+
+              <div class="select-menu-item js-navigation-item selected" role="menuitem" tabindex="0">
+                <span class="select-menu-item-icon octicon octicon-check"></span>
+                <div class="select-menu-item-text">
+                  <input checked="checked" id="do_included" name="do" type="radio" value="included">
+                  <span class="select-menu-item-heading">Not watching</span>
+                  <span class="description">Be notified when participating or @mentioned.</span>
+                  <span class="js-select-button-text hidden-select-button-text">
+                    <span class="octicon octicon-eye"></span>
+                    Watch
+                  </span>
+                </div>
+              </div>
+
+              <div class="select-menu-item js-navigation-item " role="menuitem" tabindex="0">
+                <span class="select-menu-item-icon octicon octicon octicon-check"></span>
+                <div class="select-menu-item-text">
+                  <input id="do_subscribed" name="do" type="radio" value="subscribed">
+                  <span class="select-menu-item-heading">Watching</span>
+                  <span class="description">Be notified of all conversations.</span>
+                  <span class="js-select-button-text hidden-select-button-text">
+                    <span class="octicon octicon-eye"></span>
+                    Unwatch
+                  </span>
+                </div>
+              </div>
+
+              <div class="select-menu-item js-navigation-item " role="menuitem" tabindex="0">
+                <span class="select-menu-item-icon octicon octicon-check"></span>
+                <div class="select-menu-item-text">
+                  <input id="do_ignore" name="do" type="radio" value="ignore">
+                  <span class="select-menu-item-heading">Ignoring</span>
+                  <span class="description">Never be notified.</span>
+                  <span class="js-select-button-text hidden-select-button-text">
+                    <span class="octicon octicon-mute"></span>
+                    Stop ignoring
+                  </span>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+</form>
+  </li>
+
+  <li>
+    
+  <div class="js-toggler-container js-social-container starring-container ">
+
+    <form accept-charset="UTF-8" action="https://github.com/gulpjs/gulp/unstar" class="js-toggler-form starred js-unstar-button" data-remote="true" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"><input name="authenticity_token" type="hidden" value="d076G/JWTo13qii6LJKDyhd7oVvqIZnLi8tasVM5cwzxoAXGNBeYH789wQig2y2bAhxxyOptadUsTAy/J2Zqhg=="></div>
+      <button class="btn btn-sm btn-with-count js-toggler-target" aria-label="Unstar this repository" title="Unstar gulpjs/gulp" data-ga-click="Repository, click unstar button, action:blob#show; text:Unstar">
+        <span class="octicon octicon-star"></span>
+        Unstar
+      </button>
+        <a class="social-count js-social-count" href="https://github.com/gulpjs/gulp/stargazers">
+          14,918
+        </a>
+</form>
+    <form accept-charset="UTF-8" action="https://github.com/gulpjs/gulp/star" class="js-toggler-form unstarred js-star-button" data-remote="true" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"><input name="authenticity_token" type="hidden" value="k/HL2325Zr+q7HEBwvemcONzDg/d8iSFJnDJ1s137k/r+F2XdiJpTFeJRVH72vLj2uONUsIvHzSf2btULRckSg=="></div>
+      <button class="btn btn-sm btn-with-count js-toggler-target" aria-label="Star this repository" title="Star gulpjs/gulp" data-ga-click="Repository, click star button, action:blob#show; text:Star">
+        <span class="octicon octicon-star"></span>
+        Star
+      </button>
+        <a class="social-count js-social-count" href="https://github.com/gulpjs/gulp/stargazers">
+          14,918
+        </a>
+</form>  </div>
+
+  </li>
+
+        <li>
+          <a href="https://github.com/gulpjs/gulp/blob/master/docs/API.md#fork-destination-box" class="btn btn-sm btn-with-count" title="Fork your own copy of gulpjs/gulp to your account" aria-label="Fork your own copy of gulpjs/gulp to your account" rel="facebox" data-ga-click="Repository, show fork modal, action:blob#show; text:Fork">
+            <span class="octicon octicon-repo-forked"></span>
+            Fork
+          </a>
+          <a href="https://github.com/gulpjs/gulp/network" class="social-count">1,470</a>
+
+          <div id="fork-destination-box" style="display: none;">
+            <h2 class="facebox-header">Where should we fork this repository?</h2>
+            <include-fragment src="" class="js-fork-select-fragment fork-select-fragment" data-url="/gulpjs/gulp/fork?fragment=1">
+              <img alt="Loading" height="64" src="./gulp docs_files/octocat-spinner-128.gif" width="64">
+            </include-fragment>
+          </div>
+        </li>
+
+</ul>
+
+        <h1 itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb" class="entry-title public">
+          <span class="mega-octicon octicon-repo"></span>
+          <span class="author"><a href="https://github.com/gulpjs" class="url fn" itemprop="url" rel="author"><span itemprop="title">gulpjs</span></a></span><!--
+       --><span class="path-divider">/</span><!--
+       --><strong><a href="https://github.com/gulpjs/gulp" data-pjax="#js-repo-pjax-container">gulp</a></strong>
+
+          <span class="page-context-loader">
+            <img alt="" height="16" src="./gulp docs_files/octocat-spinner-32.gif" width="16">
+          </span>
+
+        </h1>
+      </div><!-- /.container -->
+    </div><!-- /.repohead -->
+
+    <div class="container">
+      <div class="repository-with-sidebar repo-container new-discussion-timeline">
+        <div class="repository-sidebar clearfix">
+            
+<nav class="sunken-menu repo-nav js-repo-nav js-sidenav-container-pjax js-octicon-loaders" role="navigation" data-pjax="#js-repo-pjax-container" data-issue-count-url="/gulpjs/gulp/issues/counts">
+  <ul class="sunken-menu-group">
+    <li class="tooltipped tooltipped-w" aria-label="Code">
+      <a href="https://github.com/gulpjs/gulp" aria-label="Code" class="selected js-selected-navigation-item sunken-menu-item" data-hotkey="g c" data-selected-links="repo_source repo_downloads repo_commits repo_releases repo_tags repo_branches /gulpjs/gulp">
+        <span class="octicon octicon-code"></span> <span class="full-word">Code</span>
+        <img alt="" class="mini-loader" height="16" src="./gulp docs_files/octocat-spinner-32.gif" width="16">
+</a>    </li>
+
+      <li class="tooltipped tooltipped-w" aria-label="Issues">
+        <a href="https://github.com/gulpjs/gulp/issues" aria-label="Issues" class="js-selected-navigation-item sunken-menu-item" data-hotkey="g i" data-selected-links="repo_issues repo_labels repo_milestones /gulpjs/gulp/issues">
+          <span class="octicon octicon-issue-opened"></span> <span class="full-word">Issues</span>
+          <span class="js-issue-replace-counter"></span>
+          <img alt="" class="mini-loader" height="16" src="./gulp docs_files/octocat-spinner-32.gif" width="16">
+</a>      </li>
+
+    <li class="tooltipped tooltipped-w" aria-label="Pull requests">
+      <a href="https://github.com/gulpjs/gulp/pulls" aria-label="Pull requests" class="js-selected-navigation-item sunken-menu-item" data-hotkey="g p" data-selected-links="repo_pulls /gulpjs/gulp/pulls">
+          <span class="octicon octicon-git-pull-request"></span> <span class="full-word">Pull requests</span>
+          <span class="js-pull-replace-counter"></span>
+          <img alt="" class="mini-loader" height="16" src="./gulp docs_files/octocat-spinner-32.gif" width="16">
+</a>    </li>
+
+  </ul>
+  <div class="sunken-menu-separator"></div>
+  <ul class="sunken-menu-group">
+
+    <li class="tooltipped tooltipped-w" aria-label="Pulse">
+      <a href="https://github.com/gulpjs/gulp/pulse" aria-label="Pulse" class="js-selected-navigation-item sunken-menu-item" data-selected-links="pulse /gulpjs/gulp/pulse">
+        <span class="octicon octicon-pulse"></span> <span class="full-word">Pulse</span>
+        <img alt="" class="mini-loader" height="16" src="./gulp docs_files/octocat-spinner-32.gif" width="16">
+</a>    </li>
+
+    <li class="tooltipped tooltipped-w" aria-label="Graphs">
+      <a href="https://github.com/gulpjs/gulp/graphs" aria-label="Graphs" class="js-selected-navigation-item sunken-menu-item" data-selected-links="repo_graphs repo_contributors /gulpjs/gulp/graphs">
+        <span class="octicon octicon-graph"></span> <span class="full-word">Graphs</span>
+        <img alt="" class="mini-loader" height="16" src="./gulp docs_files/octocat-spinner-32.gif" width="16">
+</a>    </li>
+  </ul>
+
+
+</nav>
+
+              <div class="only-with-full-nav">
+                  
+<div class="js-clone-url clone-url " data-protocol-type="http">
+  <h3><span class="text-emphasized">HTTPS</span> clone URL</h3>
+  <div class="input-group js-zeroclipboard-container">
+    <input type="text" class="input-mini input-monospace js-url-field js-zeroclipboard-target" value="https://github.com/gulpjs/gulp.git" readonly="readonly">
+    <span class="input-group-button">
+      <button aria-label="Copy to clipboard" class="js-zeroclipboard btn btn-sm zeroclipboard-button tooltipped tooltipped-s" data-copied-hint="Copied!" type="button"><span class="octicon octicon-clippy"></span></button>
+    </span>
+  </div>
+</div>
+
+  
+<div class="js-clone-url clone-url open" data-protocol-type="ssh">
+  <h3><span class="text-emphasized">SSH</span> clone URL</h3>
+  <div class="input-group js-zeroclipboard-container">
+    <input type="text" class="input-mini input-monospace js-url-field js-zeroclipboard-target" value="git@github.com:gulpjs/gulp.git" readonly="readonly">
+    <span class="input-group-button">
+      <button aria-label="Copy to clipboard" class="js-zeroclipboard btn btn-sm zeroclipboard-button tooltipped tooltipped-s" data-copied-hint="Copied!" type="button"><span class="octicon octicon-clippy"></span></button>
+    </span>
+  </div>
+</div>
+
+  
+<div class="js-clone-url clone-url " data-protocol-type="subversion">
+  <h3><span class="text-emphasized">Subversion</span> checkout URL</h3>
+  <div class="input-group js-zeroclipboard-container">
+    <input type="text" class="input-mini input-monospace js-url-field js-zeroclipboard-target" value="https://github.com/gulpjs/gulp" readonly="readonly">
+    <span class="input-group-button">
+      <button aria-label="Copy to clipboard" class="js-zeroclipboard btn btn-sm zeroclipboard-button tooltipped tooltipped-s" data-copied-hint="Copied!" type="button"><span class="octicon octicon-clippy"></span></button>
+    </span>
+  </div>
+</div>
+
+
+
+<div class="clone-options">You can clone with
+  <form accept-charset="UTF-8" action="https://github.com/users/set_protocol?protocol_selector=http&protocol_type=clone" class="inline-form js-clone-selector-form is-enabled" data-remote="true" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"><input name="authenticity_token" type="hidden" value="dg87LLEHws3MpB1A8mmLNz6Kl9XiUFGkr5dWF27/30fip+rPSAyatYIY8/kvUmFTFIbAjGScsXOBdBcH/wap/A=="></div><button class="btn-link js-clone-selector" data-protocol="http" type="submit">HTTPS</button></form>, <form accept-charset="UTF-8" action="https://github.com/users/set_protocol?protocol_selector=ssh&protocol_type=clone" class="inline-form js-clone-selector-form is-enabled" data-remote="true" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"><input name="authenticity_token" type="hidden" value="PEculAYv+7zHN4MmzflvptJgEmhS6Q9z/Hk25lPlAspSzO/vHLXi1tGTPU3BcNPTLgFevHAraG5tEtP1U2LhEA=="></div><button class="btn-link js-clone-selector" data-protocol="ssh" type="submit">SSH</button></form>, or <form accept-charset="UTF-8" action="https://github.com/users/set_protocol?protocol_selector=subversion&protocol_type=clone" class="inline-form js-clone-selector-form is-enabled" data-remote="true" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"><input name="authenticity_token" type="hidden" value="BU6074ctaaMG1D0v5UbE2C5KNuQI+r4UoqKhaOuSAXNwxXTqX9nCdk1vCvkJjwVkUj7uo/me8UFdLB4SHFP+9g=="></div><button class="btn-link js-clone-selector" data-protocol="subversion" type="submit">Subversion</button></form>.
+  <a href="https://help.github.com/articles/which-remote-url-should-i-use" class="help tooltipped tooltipped-n" aria-label="Get help on which URL is right for you.">
+    <span class="octicon octicon-question"></span>
+  </a>
+</div>
+
+  <a href="github-mac://openRepo/https://github.com/gulpjs/gulp" class="btn btn-sm sidebar-button" title="Save gulpjs/gulp to your computer and use it in GitHub Desktop." aria-label="Save gulpjs/gulp to your computer and use it in GitHub Desktop.">
+    <span class="octicon octicon-device-desktop"></span>
+    Clone in Desktop
+  </a>
+
+
+
+                <a href="https://github.com/gulpjs/gulp/archive/master.zip" class="btn btn-sm sidebar-button" aria-label="Download the contents of gulpjs/gulp as a zip file" title="Download the contents of gulpjs/gulp as a zip file" rel="nofollow">
+                  <span class="octicon octicon-cloud-download"></span>
+                  Download ZIP
+                </a>
+              </div>
+        </div><!-- /.repository-sidebar -->
+
+        <div id="js-repo-pjax-container" class="repository-content context-loader-container" data-pjax-container="">
+
+          
+
+<a href="https://github.com/gulpjs/gulp/blob/1a7df2355f184c2e1fd57e4c5d7500c92d95d327/docs/API.md" class="hidden js-permalink-shortcut" data-hotkey="y">Permalink</a>
+
+<!-- blob contrib key: blob_contributors:v21:8558b1d354a92df5aee97c5d032a29c3 -->
+
+<div class="file-navigation js-zeroclipboard-container">
+  
+<div class="select-menu js-menu-container js-select-menu left">
+  <span class="btn btn-sm select-menu-button js-menu-target css-truncate" data-hotkey="w" data-ref="master" title="master" role="button" aria-label="Switch branches or tags" tabindex="0" aria-haspopup="true">
+    <span class="octicon octicon-git-branch"></span>
+    <i>branch:</i>
+    <span class="js-select-button css-truncate-target">master</span>
+  </span>
+
+  <div class="select-menu-modal-holder js-menu-content js-navigation-container" data-pjax="" aria-hidden="true">
+
+    <div class="select-menu-modal">
+      <div class="select-menu-header">
+        <span class="select-menu-title">Switch branches/tags</span>
+        <span class="octicon octicon-x js-menu-close" role="button" aria-label="Close"></span>
+      </div>
+
+      <div class="select-menu-filters">
+        <div class="select-menu-text-filter">
+          <input type="text" aria-label="Filter branches/tags" id="context-commitish-filter-field" class="js-filterable-field js-navigation-enable" placeholder="Filter branches/tags">
+        </div>
+        <div class="select-menu-tabs">
+          <ul>
+            <li class="select-menu-tab">
+              <a href="https://github.com/gulpjs/gulp/blob/master/docs/API.md#" data-tab-filter="branches" data-filter-placeholder="Filter branches/tags" class="js-select-menu-tab">Branches</a>
+            </li>
+            <li class="select-menu-tab">
+              <a href="https://github.com/gulpjs/gulp/blob/master/docs/API.md#" data-tab-filter="tags" data-filter-placeholder="Find a tag…" class="js-select-menu-tab">Tags</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="select-menu-list select-menu-tab-bucket js-select-menu-tab-bucket" data-tab-filter="branches">
+
+        <div data-filterable-for="context-commitish-filter-field" data-filterable-type="substring">
+
+
+            <a class="select-menu-item js-navigation-item js-navigation-open " href="https://github.com/gulpjs/gulp/blob/4.0/docs/API.md" data-name="4.0" data-skip-pjax="true" rel="nofollow">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <span class="select-menu-item-text css-truncate-target" title="4.0">
+                4.0
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open " href="https://github.com/gulpjs/gulp/blob/everything-is-not-awesome/docs/API.md" data-name="everything-is-not-awesome" data-skip-pjax="true" rel="nofollow">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <span class="select-menu-item-text css-truncate-target" title="everything-is-not-awesome">
+                everything-is-not-awesome
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open selected" href="https://github.com/gulpjs/gulp/blob/master/docs/API.md" data-name="master" data-skip-pjax="true" rel="nofollow">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <span class="select-menu-item-text css-truncate-target" title="master">
+                master
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open " href="https://github.com/gulpjs/gulp/blob/old-master/docs/API.md" data-name="old-master" data-skip-pjax="true" rel="nofollow">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <span class="select-menu-item-text css-truncate-target" title="old-master">
+                old-master
+              </span>
+            </a>
+        </div>
+
+          <div class="select-menu-no-results">Nothing to show</div>
+      </div>
+
+      <div class="select-menu-list select-menu-tab-bucket js-select-menu-tab-bucket" data-tab-filter="tags">
+        <div data-filterable-for="context-commitish-filter-field" data-filterable-type="substring">
+
+
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="https://github.com/gulpjs/gulp/tree/v3.9.0/docs/API.md" data-name="v3.9.0" data-skip-pjax="true" rel="nofollow" class="js-navigation-open select-menu-item-text css-truncate-target" title="v3.9.0">v3.9.0</a>
+            </div>
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="https://github.com/gulpjs/gulp/tree/v3.8.11/docs/API.md" data-name="v3.8.11" data-skip-pjax="true" rel="nofollow" class="js-navigation-open select-menu-item-text css-truncate-target" title="v3.8.11">v3.8.11</a>
+            </div>
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="https://github.com/gulpjs/gulp/tree/v3.8.10/docs/API.md" data-name="v3.8.10" data-skip-pjax="true" rel="nofollow" class="js-navigation-open select-menu-item-text css-truncate-target" title="v3.8.10">v3.8.10</a>
+            </div>
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="https://github.com/gulpjs/gulp/tree/v3.8.9/docs/API.md" data-name="v3.8.9" data-skip-pjax="true" rel="nofollow" class="js-navigation-open select-menu-item-text css-truncate-target" title="v3.8.9">v3.8.9</a>
+            </div>
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="https://github.com/gulpjs/gulp/tree/v3.8.8/docs/API.md" data-name="v3.8.8" data-skip-pjax="true" rel="nofollow" class="js-navigation-open select-menu-item-text css-truncate-target" title="v3.8.8">v3.8.8</a>
+            </div>
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="https://github.com/gulpjs/gulp/tree/v3.8.7/docs/API.md" data-name="v3.8.7" data-skip-pjax="true" rel="nofollow" class="js-navigation-open select-menu-item-text css-truncate-target" title="v3.8.7">v3.8.7</a>
+            </div>
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="https://github.com/gulpjs/gulp/tree/v3.8.6/docs/API.md" data-name="v3.8.6" data-skip-pjax="true" rel="nofollow" class="js-navigation-open select-menu-item-text css-truncate-target" title="v3.8.6">v3.8.6</a>
+            </div>
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="https://github.com/gulpjs/gulp/tree/v3.8.5/docs/API.md" data-name="v3.8.5" data-skip-pjax="true" rel="nofollow" class="js-navigation-open select-menu-item-text css-truncate-target" title="v3.8.5">v3.8.5</a>
+            </div>
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="https://github.com/gulpjs/gulp/tree/v3.8.4/docs/API.md" data-name="v3.8.4" data-skip-pjax="true" rel="nofollow" class="js-navigation-open select-menu-item-text css-truncate-target" title="v3.8.4">v3.8.4</a>
+            </div>
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="https://github.com/gulpjs/gulp/tree/v3.8.3/docs/API.md" data-name="v3.8.3" data-skip-pjax="true" rel="nofollow" class="js-navigation-open select-menu-item-text css-truncate-target" title="v3.8.3">v3.8.3</a>
+            </div>
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="https://github.com/gulpjs/gulp/tree/v3.8.1/docs/API.md" data-name="v3.8.1" data-skip-pjax="true" rel="nofollow" class="js-navigation-open select-menu-item-text css-truncate-target" title="v3.8.1">v3.8.1</a>
+            </div>
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="https://github.com/gulpjs/gulp/tree/3.8/docs/API.md" data-name="3.8" data-skip-pjax="true" rel="nofollow" class="js-navigation-open select-menu-item-text css-truncate-target" title="3.8">3.8</a>
+            </div>
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="https://github.com/gulpjs/gulp/tree/3.7/docs/API.md" data-name="3.7" data-skip-pjax="true" rel="nofollow" class="js-navigation-open select-menu-item-text css-truncate-target" title="3.7">3.7</a>
+            </div>
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="https://github.com/gulpjs/gulp/tree/3.5/docs/API.md" data-name="3.5" data-skip-pjax="true" rel="nofollow" class="js-navigation-open select-menu-item-text css-truncate-target" title="3.5">3.5</a>
+            </div>
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="https://github.com/gulpjs/gulp/tree/3.4/docs/API.md" data-name="3.4" data-skip-pjax="true" rel="nofollow" class="js-navigation-open select-menu-item-text css-truncate-target" title="3.4">3.4</a>
+            </div>
+        </div>
+
+        <div class="select-menu-no-results">Nothing to show</div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+  <div class="btn-group right">
+    <a href="https://github.com/gulpjs/gulp/find/master" class="js-show-file-finder btn btn-sm empty-icon tooltipped tooltipped-s" data-pjax="" data-hotkey="t" aria-label="Quickly jump between files">
+      <span class="octicon octicon-list-unordered"></span>
+    </a>
+    <button aria-label="Copy file path to clipboard" class="js-zeroclipboard btn btn-sm zeroclipboard-button tooltipped tooltipped-s" data-copied-hint="Copied!" type="button"><span class="octicon octicon-clippy"></span></button>
+  </div>
+
+  <div class="breadcrumb js-zeroclipboard-target">
+    <span class="repo-root js-repo-root"><span itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="https://github.com/gulpjs/gulp" class="" data-branch="master" data-pjax="true" itemscope="url"><span itemprop="title">gulp</span></a></span></span><span class="separator">/</span><span itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="https://github.com/gulpjs/gulp/tree/master/docs" class="" data-branch="master" data-pjax="true" itemscope="url"><span itemprop="title">docs</span></a></span><span class="separator">/</span><strong class="final-path">API.md</strong>
+  </div>
+</div>
+
+
+  <div class="commit file-history-tease">
+    <div class="file-history-tease-header">
+        <img alt="@erquhart" class="avatar" height="24" src="./gulp docs_files/2112202" width="24">
+        <span class="author"><a href="https://github.com/erquhart" rel="contributor">erquhart</a></span>
+        <time datetime="2015-06-21T01:21:04Z" is="relative-time" title="Jun 20, 2015, 7:21 PM MDT">25 days ago</time>
+        <div class="commit-title">
+            <a href="https://github.com/gulpjs/gulp/commit/87e8364f2c445c717ed5287b1b28c6ba02a1801f" class="message" data-pjax="true" title="add quick links to api docs">add quick links to api docs</a>
+        </div>
+    </div>
+
+    <div class="participation">
+      <p class="quickstat">
+        <a href="https://github.com/gulpjs/gulp/blob/master/docs/API.md#blob_contributors_box" rel="facebox">
+          <strong>19</strong>
+           contributors
+        </a>
+      </p>
+          <a class="avatar-link tooltipped tooltipped-s" aria-label="contra" href="https://github.com/gulpjs/gulp/commits/master/docs/API.md?author=contra"><img alt="@contra" class="avatar" height="20" src="./gulp docs_files/425716" width="20"> </a>
+    <a class="avatar-link tooltipped tooltipped-s" aria-label="robrich" href="https://github.com/gulpjs/gulp/commits/master/docs/API.md?author=robrich"><img alt="@robrich" class="avatar" height="20" src="./gulp docs_files/664956" width="20"> </a>
+    <a class="avatar-link tooltipped tooltipped-s" aria-label="sanfords" href="https://github.com/gulpjs/gulp/commits/master/docs/API.md?author=sanfords"><img alt="@sanfords" class="avatar" height="20" src="./gulp docs_files/1291701" width="20"> </a>
+    <a class="avatar-link tooltipped tooltipped-s" aria-label="t3chnoboy" href="https://github.com/gulpjs/gulp/commits/master/docs/API.md?author=t3chnoboy"><img alt="@t3chnoboy" class="avatar" height="20" src="./gulp docs_files/2552790" width="20"> </a>
+    <a class="avatar-link tooltipped tooltipped-s" aria-label="pkozlowski-opensource" href="https://github.com/gulpjs/gulp/commits/master/docs/API.md?author=pkozlowski-opensource"><img alt="@pkozlowski-opensource" class="avatar" height="20" src="./gulp docs_files/973550" width="20"> </a>
+    <a class="avatar-link tooltipped tooltipped-s" aria-label="erquhart" href="https://github.com/gulpjs/gulp/commits/master/docs/API.md?author=erquhart"><img alt="@erquhart" class="avatar" height="20" src="./gulp docs_files/2112202(1)" width="20"> </a>
+    <a class="avatar-link tooltipped tooltipped-s" aria-label="ceclinux" href="https://github.com/gulpjs/gulp/commits/master/docs/API.md?author=ceclinux"><img alt="@ceclinux" class="avatar" height="20" src="./gulp docs_files/2628211" width="20"> </a>
+    <a class="avatar-link tooltipped tooltipped-s" aria-label="stevemao" href="https://github.com/gulpjs/gulp/commits/master/docs/API.md?author=stevemao"><img alt="@stevemao" class="avatar" height="20" src="./gulp docs_files/6316590" width="20"> </a>
+    <a class="avatar-link tooltipped tooltipped-s" aria-label="BusyRich" href="https://github.com/gulpjs/gulp/commits/master/docs/API.md?author=BusyRich"><img alt="@BusyRich" class="avatar" height="20" src="./gulp docs_files/940411" width="20"> </a>
+    <a class="avatar-link tooltipped tooltipped-s" aria-label="sindresorhus" href="https://github.com/gulpjs/gulp/commits/master/docs/API.md?author=sindresorhus"><img alt="@sindresorhus" class="avatar" height="20" src="./gulp docs_files/170270" width="20"> </a>
+    <a class="avatar-link tooltipped tooltipped-s" aria-label="briandipalma" href="https://github.com/gulpjs/gulp/commits/master/docs/API.md?author=briandipalma"><img alt="@briandipalma" class="avatar" height="20" src="./gulp docs_files/1597820" width="20"> </a>
+    <a class="avatar-link tooltipped tooltipped-s" aria-label="matthieuprat" href="https://github.com/gulpjs/gulp/commits/master/docs/API.md?author=matthieuprat"><img alt="@matthieuprat" class="avatar" height="20" src="./gulp docs_files/890117" width="20"> </a>
+    <a class="avatar-link tooltipped tooltipped-s" aria-label="MarkLeMerise" href="https://github.com/gulpjs/gulp/commits/master/docs/API.md?author=MarkLeMerise"><img alt="@MarkLeMerise" class="avatar" height="20" src="./gulp docs_files/573634" width="20"> </a>
+    <a class="avatar-link tooltipped tooltipped-s" aria-label="RnbWd" href="https://github.com/gulpjs/gulp/commits/master/docs/API.md?author=RnbWd"><img alt="@RnbWd" class="avatar" height="20" src="./gulp docs_files/5370305" width="20"> </a>
+    <a class="avatar-link tooltipped tooltipped-s" aria-label="tohashi" href="https://github.com/gulpjs/gulp/commits/master/docs/API.md?author=tohashi"><img alt="@tohashi" class="avatar" height="20" src="./gulp docs_files/1400168" width="20"> </a>
+    <a class="avatar-link tooltipped tooltipped-s" aria-label="terinjokes" href="https://github.com/gulpjs/gulp/commits/master/docs/API.md?author=terinjokes"><img alt="@terinjokes" class="avatar" height="20" src="./gulp docs_files/273509" width="20"> </a>
+    <a class="avatar-link tooltipped tooltipped-s" aria-label="demisx" href="https://github.com/gulpjs/gulp/commits/master/docs/API.md?author=demisx"><img alt="@demisx" class="avatar" height="20" src="./gulp docs_files/4452412" width="20"> </a>
+    <a class="avatar-link tooltipped tooltipped-s" aria-label="xixixao" href="https://github.com/gulpjs/gulp/commits/master/docs/API.md?author=xixixao"><img alt="@xixixao" class="avatar" height="20" src="./gulp docs_files/1473433" width="20"> </a>
+    <a class="avatar-link tooltipped tooltipped-s" aria-label="barneycarroll" href="https://github.com/gulpjs/gulp/commits/master/docs/API.md?author=barneycarroll"><img alt="@barneycarroll" class="avatar" height="20" src="./gulp docs_files/83627" width="20"> </a>
+
+
+    </div>
+    <div id="blob_contributors_box" style="display:none">
+      <h2 class="facebox-header">Users who have contributed to this file</h2>
+      <ul class="facebox-user-list">
+          <li class="facebox-user-list-item">
+            <img alt="@contra" height="24" src="./gulp docs_files/425716(1)" width="24">
+            <a href="https://github.com/contra">contra</a>
+          </li>
+          <li class="facebox-user-list-item">
+            <img alt="@robrich" height="24" src="./gulp docs_files/664956(1)" width="24">
+            <a href="https://github.com/robrich">robrich</a>
+          </li>
+          <li class="facebox-user-list-item">
+            <img alt="@sanfords" height="24" src="./gulp docs_files/1291701(1)" width="24">
+            <a href="https://github.com/sanfords">sanfords</a>
+          </li>
+          <li class="facebox-user-list-item">
+            <img alt="@t3chnoboy" height="24" src="./gulp docs_files/2552790(1)" width="24">
+            <a href="https://github.com/t3chnoboy">t3chnoboy</a>
+          </li>
+          <li class="facebox-user-list-item">
+            <img alt="@pkozlowski-opensource" height="24" src="./gulp docs_files/973550(1)" width="24">
+            <a href="https://github.com/pkozlowski-opensource">pkozlowski-opensource</a>
+          </li>
+          <li class="facebox-user-list-item">
+            <img alt="@erquhart" height="24" src="./gulp docs_files/2112202" width="24">
+            <a href="https://github.com/erquhart">erquhart</a>
+          </li>
+          <li class="facebox-user-list-item">
+            <img alt="@ceclinux" height="24" src="./gulp docs_files/2628211(1)" width="24">
+            <a href="https://github.com/ceclinux">ceclinux</a>
+          </li>
+          <li class="facebox-user-list-item">
+            <img alt="@stevemao" height="24" src="./gulp docs_files/6316590(1)" width="24">
+            <a href="https://github.com/stevemao">stevemao</a>
+          </li>
+          <li class="facebox-user-list-item">
+            <img alt="@BusyRich" height="24" src="./gulp docs_files/940411(1)" width="24">
+            <a href="https://github.com/BusyRich">BusyRich</a>
+          </li>
+          <li class="facebox-user-list-item">
+            <img alt="@sindresorhus" height="24" src="./gulp docs_files/170270(1)" width="24">
+            <a href="https://github.com/sindresorhus">sindresorhus</a>
+          </li>
+          <li class="facebox-user-list-item">
+            <img alt="@briandipalma" height="24" src="./gulp docs_files/1597820(1)" width="24">
+            <a href="https://github.com/briandipalma">briandipalma</a>
+          </li>
+          <li class="facebox-user-list-item">
+            <img alt="@matthieuprat" height="24" src="./gulp docs_files/890117(1)" width="24">
+            <a href="https://github.com/matthieuprat">matthieuprat</a>
+          </li>
+          <li class="facebox-user-list-item">
+            <img alt="@MarkLeMerise" height="24" src="./gulp docs_files/573634(1)" width="24">
+            <a href="https://github.com/MarkLeMerise">MarkLeMerise</a>
+          </li>
+          <li class="facebox-user-list-item">
+            <img alt="@RnbWd" height="24" src="./gulp docs_files/5370305(1)" width="24">
+            <a href="https://github.com/RnbWd">RnbWd</a>
+          </li>
+          <li class="facebox-user-list-item">
+            <img alt="@tohashi" height="24" src="./gulp docs_files/1400168(1)" width="24">
+            <a href="https://github.com/tohashi">tohashi</a>
+          </li>
+          <li class="facebox-user-list-item">
+            <img alt="@terinjokes" height="24" src="./gulp docs_files/273509(1)" width="24">
+            <a href="https://github.com/terinjokes">terinjokes</a>
+          </li>
+          <li class="facebox-user-list-item">
+            <img alt="@demisx" height="24" src="./gulp docs_files/4452412(1)" width="24">
+            <a href="https://github.com/demisx">demisx</a>
+          </li>
+          <li class="facebox-user-list-item">
+            <img alt="@xixixao" height="24" src="./gulp docs_files/1473433(1)" width="24">
+            <a href="https://github.com/xixixao">xixixao</a>
+          </li>
+          <li class="facebox-user-list-item">
+            <img alt="@barneycarroll" height="24" src="./gulp docs_files/83627(1)" width="24">
+            <a href="https://github.com/barneycarroll">barneycarroll</a>
+          </li>
+      </ul>
+    </div>
+  </div>
+
+<div class="file">
+  <div class="file-header">
+    <div class="file-actions">
+
+      <div class="btn-group">
+        <a href="https://github.com/gulpjs/gulp/raw/master/docs/API.md" class="btn btn-sm " id="raw-url">Raw</a>
+          <a href="https://github.com/gulpjs/gulp/blame/master/docs/API.md" class="btn btn-sm js-update-url-with-hash">Blame</a>
+        <a href="https://github.com/gulpjs/gulp/commits/master/docs/API.md" class="btn btn-sm " rel="nofollow">History</a>
+      </div>
+
+        <a class="octicon-btn tooltipped tooltipped-nw" href="github-mac://openRepo/https://github.com/gulpjs/gulp?branch=master&filepath=docs%2FAPI.md" aria-label="Open this file in GitHub for Mac" data-ga-click="Repository, open with desktop, type:mac">
+            <span class="octicon octicon-device-desktop"></span>
+        </a>
+
+            <form accept-charset="UTF-8" action="https://github.com/gulpjs/gulp/edit/master/docs/API.md" class="inline-form" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"><input name="authenticity_token" type="hidden" value="bxZtMF63YK2rvdWwhPtnraDCFv6HEirQcJajQD89JmFiEPcY4oDXtG0q7Pb4HVWr3kdhw+QvkdPFhbArOah2NA=="></div>
+              <button class="octicon-btn tooltipped tooltipped-n" type="submit" aria-label="Fork this project and edit the file" data-hotkey="e" data-disable-with="">
+                <span class="octicon octicon-pencil"></span>
+              </button>
+</form>
+          <form accept-charset="UTF-8" action="https://github.com/gulpjs/gulp/delete/master/docs/API.md" class="inline-form" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"><input name="authenticity_token" type="hidden" value="1uJ3djl3RxHVwEbyXQKu2opThexJzgmsDqYk8APIdNMJuzXCXqWimCbN4akkkF347EPkSlVXKmJQWeagKBn5Ng=="></div>
+            <button class="octicon-btn octicon-btn-danger tooltipped tooltipped-n" type="submit" aria-label="Fork this project and delete this file" data-disable-with="">
+              <span class="octicon octicon-trashcan"></span>
+            </button>
+</form>    </div>
+
+    <div class="file-info">
+        280 lines (192 sloc)
+        <span class="file-info-divider"></span>
+      7.685 kB
+    </div>
+  </div>
+  
+  <div id="readme" class="blob instapaper_body">
+    <article class="markdown-body entry-content" itemprop="mainContentOfPage"><h2><a id="user-content-gulp-api-docs" class="anchor" href="https://github.com/gulpjs/gulp/blob/master/docs/API.md#gulp-api-docs" aria-hidden="true"><span class="octicon octicon-link"></span></a>gulp API docs</h2>
+
+<p>Jump to:
+  <a href="./gulp docs_files/gulp docs.html">gulp.src</a> |
+  <a href="https://github.com/gulpjs/gulp/blob/master/docs/API.md#gulpdestpath-options">gulp.dest</a> |
+  <a href="https://github.com/gulpjs/gulp/blob/master/docs/API.md#gulptaskname-deps-fn">gulp.task</a> |
+  <a href="https://github.com/gulpjs/gulp/blob/master/docs/API.md#gulpwatchglob--opts-tasks-or-gulpwatchglob--opts-cb">gulp.watch</a></p>
+
+<h3><a id="user-content-gulpsrcglobs-options" class="anchor" href="./gulp docs_files/gulp docs.html" aria-hidden="true"><span class="octicon octicon-link"></span></a>gulp.src(globs[, options])</h3>
+
+<p>Emits files matching provided glob or an array of globs. 
+Returns a <a href="http://nodejs.org/api/stream.html">stream</a> of <a href="https://github.com/wearefractal/vinyl-fs">Vinyl files</a> 
+that can be <a href="http://nodejs.org/api/stream.html#stream_readable_pipe_destination_options">piped</a> 
+to plugins.</p>
+
+<div class="highlight highlight-javascript"><pre>gulp.src(<span class="pl-s"><span class="pl-pds">'</span>client/templates/*.jade<span class="pl-pds">'</span></span>)
+  .pipe(jade())
+  .pipe(minify())
+  .pipe(gulp.dest(<span class="pl-s"><span class="pl-pds">'</span>build/minified_templates<span class="pl-pds">'</span></span>));</pre></div>
+
+<p><code>glob</code> refers to <a href="https://github.com/isaacs/node-glob">node-glob syntax</a> or it can be a direct file path.</p>
+
+<h4><a id="user-content-globs" class="anchor" href="https://github.com/gulpjs/gulp/blob/master/docs/API.md#globs" aria-hidden="true"><span class="octicon octicon-link"></span></a>globs</h4>
+
+<p>Type: <code>String</code> or <code>Array</code></p>
+
+<p>Glob or array of globs to read.</p>
+
+<h4><a id="user-content-options" class="anchor" href="https://github.com/gulpjs/gulp/blob/master/docs/API.md#options" aria-hidden="true"><span class="octicon octicon-link"></span></a>options</h4>
+
+<p>Type: <code>Object</code></p>
+
+<p>Options to pass to <a href="https://github.com/isaacs/node-glob">node-glob</a> through <a href="https://github.com/wearefractal/glob-stream">glob-stream</a>.</p>
+
+<p>gulp adds some additional options in addition to the <a href="https://github.com/isaacs/node-glob#options">options supported by node-glob</a> and <a href="https://github.com/wearefractal/glob-stream">glob-stream</a>:</p>
+
+<h4><a id="user-content-optionsbuffer" class="anchor" href="https://github.com/gulpjs/gulp/blob/master/docs/API.md#optionsbuffer" aria-hidden="true"><span class="octicon octicon-link"></span></a>options.buffer</h4>
+
+<p>Type: <code>Boolean</code>
+Default: <code>true</code></p>
+
+<p>Setting this to <code>false</code> will return <code>file.contents</code> as a stream and not buffer files. This is useful when working with large files. <strong>Note:</strong> Plugins might not implement support for streams.</p>
+
+<h4><a id="user-content-optionsread" class="anchor" href="https://github.com/gulpjs/gulp/blob/master/docs/API.md#optionsread" aria-hidden="true"><span class="octicon octicon-link"></span></a>options.read</h4>
+
+<p>Type: <code>Boolean</code>
+Default: <code>true</code></p>
+
+<p>Setting this to <code>false</code> will return <code>file.contents</code> as null and not read the file at all.</p>
+
+<h4><a id="user-content-optionsbase" class="anchor" href="https://github.com/gulpjs/gulp/blob/master/docs/API.md#optionsbase" aria-hidden="true"><span class="octicon octicon-link"></span></a>options.base</h4>
+
+<p>Type: <code>String</code>
+Default: everything before a glob starts (see <a href="https://github.com/wearefractal/glob2base">glob2base</a>)</p>
+
+<p>E.g., consider <code>somefile.js</code> in <code>client/js/somedir</code>:</p>
+
+<div class="highlight highlight-js"><pre>gulp.src(<span class="pl-s"><span class="pl-pds">'</span>client/js/**/*.js<span class="pl-pds">'</span></span>) <span class="pl-c">// Matches 'client/js/somedir/somefile.js' and resolves `base` to `client/js/`</span>
+  .pipe(minify())
+  .pipe(gulp.dest(<span class="pl-s"><span class="pl-pds">'</span>build<span class="pl-pds">'</span></span>));  <span class="pl-c">// Writes 'build/somedir/somefile.js'</span>
+
+gulp.src(<span class="pl-s"><span class="pl-pds">'</span>client/js/**/*.js<span class="pl-pds">'</span></span>, { base<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>client<span class="pl-pds">'</span></span> })
+  .pipe(minify())
+  .pipe(gulp.dest(<span class="pl-s"><span class="pl-pds">'</span>build<span class="pl-pds">'</span></span>));  <span class="pl-c">// Writes 'build/js/somedir/somefile.js'</span></pre></div>
+
+<h3><a id="user-content-gulpdestpath-options" class="anchor" href="https://github.com/gulpjs/gulp/blob/master/docs/API.md#gulpdestpath-options" aria-hidden="true"><span class="octicon octicon-link"></span></a>gulp.dest(path[, options])</h3>
+
+<p>Can be piped to and it will write files. Re-emits all data passed to it so you can pipe to multiple folders.  Folders that don't exist will be created.</p>
+
+<div class="highlight highlight-javascript"><pre>gulp.src(<span class="pl-s"><span class="pl-pds">'</span>./client/templates/*.jade<span class="pl-pds">'</span></span>)
+  .pipe(jade())
+  .pipe(gulp.dest(<span class="pl-s"><span class="pl-pds">'</span>./build/templates<span class="pl-pds">'</span></span>))
+  .pipe(minify())
+  .pipe(gulp.dest(<span class="pl-s"><span class="pl-pds">'</span>./build/minified_templates<span class="pl-pds">'</span></span>));</pre></div>
+
+<p>The write path is calculated by appending the file relative path to the given
+destination directory. In turn, relative paths are calculated against the file base. 
+See <code>gulp.src</code> above for more info.</p>
+
+<h4><a id="user-content-path" class="anchor" href="https://github.com/gulpjs/gulp/blob/master/docs/API.md#path" aria-hidden="true"><span class="octicon octicon-link"></span></a>path</h4>
+
+<p>Type: <code>String</code> or <code>Function</code></p>
+
+<p>The path (output folder) to write files to. Or a function that returns it, the function will be provided a <a href="https://github.com/wearefractal/vinyl">vinyl File instance</a>.</p>
+
+<h4><a id="user-content-options-1" class="anchor" href="https://github.com/gulpjs/gulp/blob/master/docs/API.md#options-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>options</h4>
+
+<p>Type: <code>Object</code></p>
+
+<h4><a id="user-content-optionscwd" class="anchor" href="https://github.com/gulpjs/gulp/blob/master/docs/API.md#optionscwd" aria-hidden="true"><span class="octicon octicon-link"></span></a>options.cwd</h4>
+
+<p>Type: <code>String</code>
+Default: <code>process.cwd()</code></p>
+
+<p><code>cwd</code> for the output folder, only has an effect if provided output folder is relative.</p>
+
+<h4><a id="user-content-optionsmode" class="anchor" href="https://github.com/gulpjs/gulp/blob/master/docs/API.md#optionsmode" aria-hidden="true"><span class="octicon octicon-link"></span></a>options.mode</h4>
+
+<p>Type: <code>String</code>
+Default: <code>0777</code></p>
+
+<p>Octal permission string specifying mode for any folders that need to be created for output folder.</p>
+
+<h3><a id="user-content-gulptaskname-deps-fn" class="anchor" href="https://github.com/gulpjs/gulp/blob/master/docs/API.md#gulptaskname-deps-fn" aria-hidden="true"><span class="octicon octicon-link"></span></a>gulp.task(name[, deps], fn)</h3>
+
+<p>Define a task using <a href="https://github.com/robrich/orchestrator">Orchestrator</a>.</p>
+
+<div class="highlight highlight-js"><pre>gulp.task(<span class="pl-s"><span class="pl-pds">'</span>somename<span class="pl-pds">'</span></span>, <span class="pl-k">function</span>() {
+  <span class="pl-c">// Do stuff</span>
+});</pre></div>
+
+<h4><a id="user-content-name" class="anchor" href="https://github.com/gulpjs/gulp/blob/master/docs/API.md#name" aria-hidden="true"><span class="octicon octicon-link"></span></a>name</h4>
+
+<p>The name of the task. Tasks that you want to run from the command line should not have spaces in them.</p>
+
+<h4><a id="user-content-deps" class="anchor" href="https://github.com/gulpjs/gulp/blob/master/docs/API.md#deps" aria-hidden="true"><span class="octicon octicon-link"></span></a>deps</h4>
+
+<p>Type: <code>Array</code></p>
+
+<p>An array of tasks to be executed and completed before your task will run.</p>
+
+<div class="highlight highlight-js"><pre>gulp.task(<span class="pl-s"><span class="pl-pds">'</span>mytask<span class="pl-pds">'</span></span>, [<span class="pl-s"><span class="pl-pds">'</span>array<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>of<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>task<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>names<span class="pl-pds">'</span></span>], <span class="pl-k">function</span>() {
+  <span class="pl-c">// Do stuff</span>
+});</pre></div>
+
+<p><strong>Note:</strong> Are your tasks running before the dependencies are complete?  Make sure your dependency tasks are correctly using the async run hints: take in a callback or return a promise or event stream.</p>
+
+<h4><a id="user-content-fn" class="anchor" href="https://github.com/gulpjs/gulp/blob/master/docs/API.md#fn" aria-hidden="true"><span class="octicon octicon-link"></span></a>fn</h4>
+
+<p>The function that performs the task's operations. Generally this takes the form of <code>gulp.src().pipe(someplugin())</code>.</p>
+
+<h4><a id="user-content-async-task-support" class="anchor" href="https://github.com/gulpjs/gulp/blob/master/docs/API.md#async-task-support" aria-hidden="true"><span class="octicon octicon-link"></span></a>Async task support</h4>
+
+<p>Tasks can be made asynchronous if its <code>fn</code> does one of the following:</p>
+
+<h5><a id="user-content-accept-a-callback" class="anchor" href="https://github.com/gulpjs/gulp/blob/master/docs/API.md#accept-a-callback" aria-hidden="true"><span class="octicon octicon-link"></span></a>Accept a callback</h5>
+
+<div class="highlight highlight-javascript"><pre><span class="pl-c">// run a command in a shell</span>
+<span class="pl-k">var</span> exec <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>child_process<span class="pl-pds">'</span></span>).exec;
+gulp.task(<span class="pl-s"><span class="pl-pds">'</span>jekyll<span class="pl-pds">'</span></span>, <span class="pl-k">function</span>(<span class="pl-smi">cb</span>) {
+  <span class="pl-c">// build Jekyll</span>
+  <span class="pl-c1">exec</span>(<span class="pl-s"><span class="pl-pds">'</span>jekyll build<span class="pl-pds">'</span></span>, <span class="pl-k">function</span>(<span class="pl-smi">err</span>) {
+    <span class="pl-k">if</span> (err) <span class="pl-k">return</span> cb(err); <span class="pl-c">// return error</span>
+    cb(); <span class="pl-c">// finished task</span>
+  });
+});</pre></div>
+
+<h5><a id="user-content-return-a-stream" class="anchor" href="https://github.com/gulpjs/gulp/blob/master/docs/API.md#return-a-stream" aria-hidden="true"><span class="octicon octicon-link"></span></a>Return a stream</h5>
+
+<div class="highlight highlight-js"><pre>gulp.task(<span class="pl-s"><span class="pl-pds">'</span>somename<span class="pl-pds">'</span></span>, <span class="pl-k">function</span>() {
+  <span class="pl-k">var</span> stream <span class="pl-k">=</span> gulp.src(<span class="pl-s"><span class="pl-pds">'</span>client/**/*.js<span class="pl-pds">'</span></span>)
+    .pipe(minify())
+    .pipe(gulp.dest(<span class="pl-s"><span class="pl-pds">'</span>build<span class="pl-pds">'</span></span>));
+  <span class="pl-k">return</span> stream;
+});</pre></div>
+
+<h5><a id="user-content-return-a-promise" class="anchor" href="https://github.com/gulpjs/gulp/blob/master/docs/API.md#return-a-promise" aria-hidden="true"><span class="octicon octicon-link"></span></a>Return a promise</h5>
+
+<div class="highlight highlight-javascript"><pre><span class="pl-k">var</span> Q <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>q<span class="pl-pds">'</span></span>);
+
+gulp.task(<span class="pl-s"><span class="pl-pds">'</span>somename<span class="pl-pds">'</span></span>, <span class="pl-k">function</span>() {
+  <span class="pl-k">var</span> deferred <span class="pl-k">=</span> Q.<span class="pl-c1">defer</span>();
+
+  <span class="pl-c">// do async stuff</span>
+  <span class="pl-c1">setTimeout</span>(<span class="pl-k">function</span>() {
+    deferred.resolve();
+  }, <span class="pl-c1">1</span>);
+
+  <span class="pl-k">return</span> deferred.promise;
+});</pre></div>
+
+<p><strong>Note:</strong> By default, tasks run with maximum concurrency -- e.g. it launches all the tasks at once and waits for nothing. If you want to create a series where tasks run in a particular order, you need to do two things:</p>
+
+<ul>
+<li>give it a hint to tell it when the task is done,</li>
+<li>and give it a hint that a task depends on completion of another.</li>
+</ul>
+
+<p>For these examples, let's presume you have two tasks, "one" and "two" that you specifically want to run in this order:</p>
+
+<ol>
+<li><p>In task "one" you add a hint to tell it when the task is done.  Either take in a callback and call it when you're
+done or return a promise or stream that the engine should wait to resolve or end respectively.</p></li>
+<li><p>In task "two" you add a hint telling the engine that it depends on completion of the first task.</p></li>
+</ol>
+
+<p>So this example would look like this:</p>
+
+<div class="highlight highlight-js"><pre><span class="pl-k">var</span> gulp <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>gulp<span class="pl-pds">'</span></span>);
+
+<span class="pl-c">// takes in a callback so the engine knows when it'll be done</span>
+gulp.task(<span class="pl-s"><span class="pl-pds">'</span>one<span class="pl-pds">'</span></span>, <span class="pl-k">function</span>(<span class="pl-smi">cb</span>) {
+    <span class="pl-c">// do stuff -- async or otherwise</span>
+    cb(err); <span class="pl-c">// if err is not null and not undefined, the run will stop, and note that it failed</span>
+});
+
+<span class="pl-c">// identifies a dependent task must be complete before this one begins</span>
+gulp.task(<span class="pl-s"><span class="pl-pds">'</span>two<span class="pl-pds">'</span></span>, [<span class="pl-s"><span class="pl-pds">'</span>one<span class="pl-pds">'</span></span>], <span class="pl-k">function</span>() {
+    <span class="pl-c">// task 'one' is done now</span>
+});
+
+gulp.task(<span class="pl-s"><span class="pl-pds">'</span>default<span class="pl-pds">'</span></span>, [<span class="pl-s"><span class="pl-pds">'</span>one<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>two<span class="pl-pds">'</span></span>]);</pre></div>
+
+<h3><a id="user-content-gulpwatchglob--opts-tasks-or-gulpwatchglob--opts-cb" class="anchor" href="https://github.com/gulpjs/gulp/blob/master/docs/API.md#gulpwatchglob--opts-tasks-or-gulpwatchglob--opts-cb" aria-hidden="true"><span class="octicon octicon-link"></span></a>gulp.watch(glob [, opts], tasks) or gulp.watch(glob [, opts, cb])</h3>
+
+<p>Watch files and do something when a file changes. This always returns an EventEmitter that emits <code>change</code> events.</p>
+
+<h3><a id="user-content-gulpwatchglob-opts-tasks" class="anchor" href="https://github.com/gulpjs/gulp/blob/master/docs/API.md#gulpwatchglob-opts-tasks" aria-hidden="true"><span class="octicon octicon-link"></span></a>gulp.watch(glob[, opts], tasks)</h3>
+
+<h4><a id="user-content-glob" class="anchor" href="https://github.com/gulpjs/gulp/blob/master/docs/API.md#glob" aria-hidden="true"><span class="octicon octicon-link"></span></a>glob</h4>
+
+<p>Type: <code>String</code> or <code>Array</code></p>
+
+<p>A single glob or array of globs that indicate which files to watch for changes.</p>
+
+<h4><a id="user-content-opts" class="anchor" href="https://github.com/gulpjs/gulp/blob/master/docs/API.md#opts" aria-hidden="true"><span class="octicon octicon-link"></span></a>opts</h4>
+
+<p>Type: <code>Object</code></p>
+
+<p>Options, that are passed to <a href="https://github.com/shama/gaze"><code>gaze</code></a>.</p>
+
+<h4><a id="user-content-tasks" class="anchor" href="https://github.com/gulpjs/gulp/blob/master/docs/API.md#tasks" aria-hidden="true"><span class="octicon octicon-link"></span></a>tasks</h4>
+
+<p>Type: <code>Array</code></p>
+
+<p>Names of task(s) to run when a file changes, added with <code>gulp.task()</code></p>
+
+<div class="highlight highlight-js"><pre><span class="pl-k">var</span> watcher <span class="pl-k">=</span> gulp.<span class="pl-c1">watch</span>(<span class="pl-s"><span class="pl-pds">'</span>js/**/*.js<span class="pl-pds">'</span></span>, [<span class="pl-s"><span class="pl-pds">'</span>uglify<span class="pl-pds">'</span></span>,<span class="pl-s"><span class="pl-pds">'</span>reload<span class="pl-pds">'</span></span>]);
+watcher.on(<span class="pl-s"><span class="pl-pds">'</span>change<span class="pl-pds">'</span></span>, <span class="pl-k">function</span>(<span class="pl-smi">event</span>) {
+  <span class="pl-en">console</span><span class="pl-c1">.log</span>(<span class="pl-s"><span class="pl-pds">'</span>File <span class="pl-pds">'</span></span> <span class="pl-k">+</span> <span class="pl-c1">event</span>.path <span class="pl-k">+</span> <span class="pl-s"><span class="pl-pds">'</span> was <span class="pl-pds">'</span></span> <span class="pl-k">+</span> <span class="pl-c1">event</span>.<span class="pl-c1">type</span> <span class="pl-k">+</span> <span class="pl-s"><span class="pl-pds">'</span>, running tasks...<span class="pl-pds">'</span></span>);
+});</pre></div>
+
+<h3><a id="user-content-gulpwatchglob-opts-cb" class="anchor" href="https://github.com/gulpjs/gulp/blob/master/docs/API.md#gulpwatchglob-opts-cb" aria-hidden="true"><span class="octicon octicon-link"></span></a>gulp.watch(glob[, opts, cb])</h3>
+
+<h4><a id="user-content-glob-1" class="anchor" href="https://github.com/gulpjs/gulp/blob/master/docs/API.md#glob-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>glob</h4>
+
+<p>Type: <code>String</code> or <code>Array</code></p>
+
+<p>A single glob or array of globs that indicate which files to watch for changes.</p>
+
+<h4><a id="user-content-opts-1" class="anchor" href="https://github.com/gulpjs/gulp/blob/master/docs/API.md#opts-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>opts</h4>
+
+<p>Type: <code>Object</code></p>
+
+<p>Options, that are passed to <a href="https://github.com/shama/gaze"><code>gaze</code></a>.</p>
+
+<h4><a id="user-content-cbevent" class="anchor" href="https://github.com/gulpjs/gulp/blob/master/docs/API.md#cbevent" aria-hidden="true"><span class="octicon octicon-link"></span></a>cb(event)</h4>
+
+<p>Type: <code>Function</code></p>
+
+<p>Callback to be called on each change.</p>
+
+<div class="highlight highlight-js"><pre>gulp.<span class="pl-c1">watch</span>(<span class="pl-s"><span class="pl-pds">'</span>js/**/*.js<span class="pl-pds">'</span></span>, <span class="pl-k">function</span>(<span class="pl-smi">event</span>) {
+  <span class="pl-en">console</span><span class="pl-c1">.log</span>(<span class="pl-s"><span class="pl-pds">'</span>File <span class="pl-pds">'</span></span> <span class="pl-k">+</span> <span class="pl-c1">event</span>.path <span class="pl-k">+</span> <span class="pl-s"><span class="pl-pds">'</span> was <span class="pl-pds">'</span></span> <span class="pl-k">+</span> <span class="pl-c1">event</span>.<span class="pl-c1">type</span> <span class="pl-k">+</span> <span class="pl-s"><span class="pl-pds">'</span>, running tasks...<span class="pl-pds">'</span></span>);
+});</pre></div>
+
+<p>The callback will be passed an object, <code>event</code>, that describes the change:</p>
+
+<h5><a id="user-content-eventtype" class="anchor" href="https://github.com/gulpjs/gulp/blob/master/docs/API.md#eventtype" aria-hidden="true"><span class="octicon octicon-link"></span></a>event.type</h5>
+
+<p>Type: <code>String</code></p>
+
+<p>The type of change that occurred, either <code>added</code>, <code>changed</code> or <code>deleted</code>.</p>
+
+<h5><a id="user-content-eventpath" class="anchor" href="https://github.com/gulpjs/gulp/blob/master/docs/API.md#eventpath" aria-hidden="true"><span class="octicon octicon-link"></span></a>event.path</h5>
+
+<p>Type: <code>String</code></p>
+
+<p>The path to the file that triggered the event.</p>
+</article>
+  </div>
+
+</div>
+
+<a href="https://github.com/gulpjs/gulp/blob/master/docs/API.md#jump-to-line" rel="facebox[.linejump]" data-hotkey="l" style="display:none">Jump to Line</a>
+<div id="jump-to-line" style="display:none">
+  <form accept-charset="UTF-8" action="" class="js-jump-to-line-form" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"></div>
+    <input class="linejump-input js-jump-to-line-field" type="text" placeholder="Jump to line…" autofocus="">
+    <button type="submit" class="btn">Go</button>
+</form></div>
+
+        </div>
+
+      </div><!-- /.repo-container -->
+      <div class="modal-backdrop"></div>
+    </div><!-- /.container -->
+  </div><!-- /.site -->
+
+
+    </div><!-- /.wrapper -->
+
+      <div class="container">
+  <div class="site-footer" role="contentinfo">
+    <ul class="site-footer-links right">
+        <li><a href="https://status.github.com/" data-ga-click="Footer, go to status, text:status">Status</a></li>
+      <li><a href="https://developer.github.com/" data-ga-click="Footer, go to api, text:api">API</a></li>
+      <li><a href="https://training.github.com/" data-ga-click="Footer, go to training, text:training">Training</a></li>
+      <li><a href="https://shop.github.com/" data-ga-click="Footer, go to shop, text:shop">Shop</a></li>
+        <li><a href="https://github.com/blog" data-ga-click="Footer, go to blog, text:blog">Blog</a></li>
+        <li><a href="https://github.com/about" data-ga-click="Footer, go to about, text:about">About</a></li>
+        <li><a href="https://help.github.com/" data-ga-click="Footer, go to help, text:help">Help</a></li>
+
+    </ul>
+
+    <a href="https://github.com/" aria-label="Homepage">
+      <span class="mega-octicon octicon-mark-github" title="GitHub"></span>
+</a>
+    <ul class="site-footer-links">
+      <li>© 2015 <span title="0.07943s from github-fe138-cp1-prd.iad.github.net">GitHub</span>, Inc.</li>
+        <li><a href="https://github.com/site/terms" data-ga-click="Footer, go to terms, text:terms">Terms</a></li>
+        <li><a href="https://github.com/site/privacy" data-ga-click="Footer, go to privacy, text:privacy">Privacy</a></li>
+        <li><a href="https://github.com/security" data-ga-click="Footer, go to security, text:security">Security</a></li>
+        <li><a href="https://github.com/contact" data-ga-click="Footer, go to contact, text:contact">Contact</a></li>
+    </ul>
+  </div>
+</div>
+
+
+    <div class="fullscreen-overlay js-fullscreen-overlay" id="fullscreen_overlay">
+  <div class="fullscreen-container js-suggester-container">
+    <div class="textarea-wrap">
+      <textarea name="fullscreen-contents" id="fullscreen-contents" class="fullscreen-contents js-fullscreen-contents" placeholder=""></textarea>
+      <div class="suggester-container">
+        <div class="suggester fullscreen-suggester js-suggester js-navigation-container"></div>
+      </div>
+    </div>
+  </div>
+  <div class="fullscreen-sidebar">
+    <a href="https://github.com/gulpjs/gulp/blob/master/docs/API.md#" class="exit-fullscreen js-exit-fullscreen tooltipped tooltipped-w" aria-label="Exit Zen Mode">
+      <span class="mega-octicon octicon-screen-normal"></span>
+    </a>
+    <a href="https://github.com/gulpjs/gulp/blob/master/docs/API.md#" class="theme-switcher js-theme-switcher tooltipped tooltipped-w" aria-label="Switch themes">
+      <span class="octicon octicon-color-mode"></span>
+    </a>
+  </div>
+</div>
+
+
+
+    
+    
+
+    <div id="ajax-error-message" class="flash flash-error">
+      <span class="octicon octicon-alert"></span>
+      <a href="https://github.com/gulpjs/gulp/blob/master/docs/API.md#" class="octicon octicon-x flash-close js-ajax-error-dismiss" aria-label="Dismiss error"></a>
+      Something went wrong with that request. Please try again.
+    </div>
+
+
+      <script crossorigin="anonymous" src="./gulp docs_files/frameworks-3241a40a58a82e21daef3dd3cdca01bde189158793c1b6f9193fff2b5293cd1d.js"></script>
+      <script async="async" crossorigin="anonymous" src="./gulp docs_files/index-d3ef45e52a74e2511c31a0051d5dfd10b60b12a8b8a738ead962c35e11dbcc1f.js"></script>
+      
+      
+  
+
+
+    <div class="facebox" id="facebox" style="display:none;">       <div class="facebox-popup">         <div class="facebox-content">         </div>         <button type="button" class="facebox-close js-facebox-close" aria-label="Close modal">           <span class="octicon octicon-remove-close"></span>         </button>       </div>     </div></body></html>

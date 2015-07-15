@@ -1,0 +1,35 @@
+{
+  "name": "nrddtech.com",
+  "version": "1.0.0",
+  "description": "Homepage for company website",
+  "main": "index.js",
+  "dependencies": {
+    "gulp": "^3.9.0"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-jshint": "^1.11.2",
+    "gulp-minify-css": "^1.2.0",
+    "gulp-notify": "^2.2.0",
+    "gulp-plumber": "^1.0.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NRDD/Website.git"
+  },
+  "keywords": [
+    "NRDD",
+    "website",
+    "tech",
+    "rushbuddy"
+  ],
+  "author": "Devon D'Apuzzo and Nick Rinard",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NRDD/Website/issues"
+  },
+  "homepage": "https://github.com/NRDD/Website#readme"
+}
